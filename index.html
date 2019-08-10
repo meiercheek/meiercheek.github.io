@@ -17,7 +17,7 @@
                         <h1 class="text" class="card-title" >ľubomír majerčík</h1>      
                         <p class="text" class="card-text">computer science student, web developer and aspiring video game programmer</p>
                         <button type="button" onclick="location.href='https://www.linkedin.com/in/lmajercik/';" class="btn btn-outline-primary btn-lg">add me on linkedin</button>
-                    <button type="button" onclick="location.href='cv.html';" class="btn btn-outline-dark btn-lg">Look at my CV</button>
+                    <button type="button" onclick="location.href='cv.html';" class="btn btn-outline-dark btn-lg">look at my cv</button>
                     </div>
                 </div>
         
@@ -36,11 +36,10 @@
         </div>
 
         <script>
-            let dark = false;
-            document.querySelectorAll('.stylebutton').forEach(function(e) {
-                e.addEventListener('click', function() {
-                //console.log(dark);
-                if(dark === false){
+            let dark = sessionStorage.getItem('dark');
+
+            
+function darken(){
                     document.getElementById('theme').src = "img/light.png";
                     let cv = document.getElementsByClassName("btn btn-outline-dark btn-lg");
                     cv[0].className = "btn btn-outline-light btn-lg";
@@ -62,10 +61,10 @@
                         texts[i].style.color = 'white';
                         i--;     
                     }
-                    dark = true;
-                       
+                    dark = "true";
                 }
-                else if(dark === true){
+
+                function lighten(){
                     document.getElementById('theme').src = "img/dark.png";
                     const btns = document.getElementsByClassName("btn btn-outline-light btn-lg");
                     //console.log(btns);
@@ -86,9 +85,26 @@
                         texts[i].style.color = 'black';
                         i--;     
                     }
-                    dark = false;
-                    
-                   
+                    dark = "false";
+                }    
+
+
+            if(dark === "true"){
+                darken();
+            }
+            
+            
+            document.querySelectorAll('.stylebutton').forEach(function(e) {
+                e.addEventListener('click', function() {
+                //console.log(dark);
+
+
+
+                if(dark === "false"){
+                   darken();
+                }
+                else if(dark === "true"){
+                    lighten();     
                 }
 
                 else{
@@ -97,6 +113,8 @@
                 
                  
                 sessionStorage.setItem('dark', dark);
+
+                
 
                 })
             });
