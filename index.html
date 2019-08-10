@@ -24,7 +24,7 @@
             <h3 class="text" style="padding:10px">my things:</h3>
             <div style="">
                 <div class="card" style="min-width:75px; width:500px;">
-                        <img class="card-img-top" src="img/giphy.gif" alt="super geralt">
+                        <img class="card-img-top" src="https://media.giphy.com/media/j1tpU8c3NTtztP7nfv/giphy.gif" alt="super geralt">
                         
                         <div class="card-body">
                         <h4 class="text" class="card-title">super geralt</h4>
@@ -37,55 +37,57 @@
 
         <script>
             let dark = sessionStorage.getItem('dark');
-
+            if (dark === null){
+                dark = false;
+            }
             
-function darken(){
-                    document.getElementById('theme').src = "img/light.png";
-                    let cv = document.getElementsByClassName("btn btn-outline-dark btn-lg");
-                    cv[0].className = "btn btn-outline-light btn-lg";
-                    let sg = document.getElementsByClassName("btn btn-outline-success btn-lg");
-                    sg[0].className = "btn btn-outline-light btn-lg";
-                    let ln = document.getElementsByClassName("btn btn-outline-primary btn-lg");
-                    ln[0].className = "btn btn-outline-light btn-lg";
-                    document.getElementById('one').style.backgroundColor = '#272a2e';
-                    let texts = document.getElementsByClassName("text");
-                    let cards = document.getElementsByClassName("card");
-                    let i = texts.length - 1;
-                    let j = cards.length - 1;
+            function darken(){
+                document.getElementById('theme').src = "img/light.png";
+                let cv = document.getElementsByClassName("btn btn-outline-dark btn-lg");
+                cv[0].className = "btn btn-outline-light btn-lg";
+                let sg = document.getElementsByClassName("btn btn-outline-success btn-lg");
+                sg[0].className = "btn btn-outline-light btn-lg";
+                let ln = document.getElementsByClassName("btn btn-outline-primary btn-lg");
+                ln[0].className = "btn btn-outline-light btn-lg";
+                document.getElementById('one').style.backgroundColor = '#272a2e';
+                let texts = document.getElementsByClassName("text");
+                let cards = document.getElementsByClassName("card");
+                let i = texts.length - 1;
+                let j = cards.length - 1;
                     //console.log("i: "+ i + "j :"+ j);
-                    while(j >= 0){
-                        cards[j].style.backgroundColor = '#18171B';
-                        j--;     
-                    }  
-                    while(i >= 0){
-                        texts[i].style.color = 'white';
-                        i--;     
-                    }
-                    dark = "true";
+                while(j >= 0){
+                    cards[j].style.backgroundColor = '#18171B';
+                    j--;     
+                }  
+                while(i >= 0){
+                    texts[i].style.color = 'white';
+                    i--;     
+                }
+                dark = "true";
                 }
 
-                function lighten(){
-                    document.getElementById('theme').src = "img/dark.png";
-                    const btns = document.getElementsByClassName("btn btn-outline-light btn-lg");
+            function lighten(){
+                document.getElementById('theme').src = "img/dark.png";
+                let btns = document.getElementsByClassName("btn btn-outline-light btn-lg");
                     //console.log(btns);
-                    btns[2].className = "btn btn-outline-success btn-lg";
-                    btns[1].className = "btn btn-outline-dark btn-lg";
-                    btns[0].className = "btn btn-outline-primary btn-lg";
-                    document.getElementById('one').style.backgroundColor = '#d1d1d1';
-                    let texts = document.getElementsByClassName("text");
-                    let cards = document.getElementsByClassName("card");
-                    let i = texts.length - 1;
-                    let j = cards.length - 1;
+                btns[2].className = "btn btn-outline-success btn-lg";
+                btns[1].className = "btn btn-outline-dark btn-lg";
+                btns[0].className = "btn btn-outline-primary btn-lg";
+                document.getElementById('one').style.backgroundColor = '#d1d1d1';
+                let texts = document.getElementsByClassName("text");
+                let cards = document.getElementsByClassName("card");
+                let i = texts.length - 1;
+                let j = cards.length - 1;
                     //console.log("i: "+ i + "j :"+ j);
-                    while(j >= 0){
-                        cards[j].style.backgroundColor = 'white';
-                        j--;     
-                    }  
-                    while(i >= 0){
-                        texts[i].style.color = 'black';
-                        i--;     
-                    }
-                    dark = "false";
+                while(j >= 0){
+                    cards[j].style.backgroundColor = 'white';
+                    j--;     
+                }  
+                while(i >= 0){
+                    texts[i].style.color = 'black';
+                    i--;     
+                }
+                dark = "false";
                 }    
 
 
