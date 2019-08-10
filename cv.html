@@ -5,14 +5,60 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        
+        <div style="margin:auto;">
+            <div class="card"  style="width:500px;">
+                    <div class="card-body">
+                        <h1 class="text" class="card-title" >my skills:</h1>      
+                        <p class="text" class="card-text"></p>
+                        <table style="width: 250px; margin:auto; padding:20px;" class="table table-hover table-dark ">
+                                <thead>
+                                  <tr>
+                                    <th>skill</th>
+                                    <th>extent</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                        <td><img src="img/js.png"></img></td>
+                                        <td>intermediate</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/c.png"></img></td>
+                                        <td>advanced</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/php.png"></img></td>
+                                        <td>intermediate</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/cs.png"></img></td>
+                                        <td>beginner</td>
+                                        </tr>
+                                        <tr>
+                                        <td><img src="img/html.png"></img><img src="img/css.png"></img></td>
+                                        <td>advanced</td>
+                                        </tr>
+                                        <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                              </table>
+                        <button type="button" onclick="location.href='https://www.linkedin.com/in/lmajercik/';" class="btn btn-outline-primary btn-lg">add me on linkedin</button>
+                    </div>
+                </div>
+            </div>          
     </body>
 
     <script>
-       let x = sessionStorage.getItem('dark');
-       alert(x);
+       let theme = sessionStorage.getItem('dark');
+       
     </script>
 </html>
