@@ -37,8 +37,8 @@
 
         <script>
             let dark = sessionStorage.getItem('dark');
-            if (dark === null){
-                dark = false;
+            if (dark === null || dark === undefined){
+                dark = "false";
             }
             
             function darken(){
@@ -110,7 +110,7 @@
                 }
 
                 else{
-                    console.log("this shouldnt happen");
+                    alert("this shouldnt happen");
                 }
                 
                  

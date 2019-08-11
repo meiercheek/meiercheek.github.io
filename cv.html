@@ -11,13 +11,15 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
-        <div style="margin:auto;">
-            <div class="card"  style="width:500px;">
+    <body id="one">
+        <button style="height: 60px; background-color: inherit; border: 0px;" type="submit" class="stylebutton"><img id="theme" src="img/dark.png"></img> </button>
+        
+        <div style="margin:auto; padding:20px;">
+                <button style="height: 60px; margin:20px;" type="button" onclick="location.href='index.html';" class="btn btn-outline-danger btn-lg">go back</button>
+                <div class="card" style="width:500px;">
                     <div class="card-body">
                         <h1 class="text" class="card-title" >my skills:</h1>      
-                        <p class="text" class="card-text"></p>
-                        <table style="width: 250px; margin:auto; padding:20px;" class="table table-hover table-dark ">
+                        <table style="width: inherit; margin:auto; padding:20px;" class="table table-hover">
                                 <thead>
                                   <tr>
                                     <th>skill</th>
@@ -26,39 +28,108 @@
                                 </thead>
                                 <tbody>
                                         <tr>
-                                        <td><img src="img/js.png"></img></td>
+                                        <td><img src="img/js.png"></img><img src="img/php.png"></img></td>
                                         <td>intermediate</td>
                                         </tr>
                                         <tr>
-                                        <td><img src="img/c.png"></img></td>
+                                        <td><img src="img/c.png"></img><img src="img/html.png"></img><img src="img/css.png"></img></td>
                                         <td>advanced</td>
-                                        </tr>
-                                        <tr>
-                                        <td><img src="img/php.png"></img></td>
-                                        <td>intermediate</td>
                                         </tr>
                                         <tr>
                                         <td><img src="img/cs.png"></img></td>
                                         <td>beginner</td>
                                         </tr>
-                                        <tr>
-                                        <td><img src="img/html.png"></img><img src="img/css.png"></img></td>
-                                        <td>advanced</td>
-                                        </tr>
-                                        <tr>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        </tr>
                                         </tbody>
                               </table>
-                        <button type="button" onclick="location.href='https://www.linkedin.com/in/lmajercik/';" class="btn btn-outline-primary btn-lg">add me on linkedin</button>
+                        
                     </div>
                 </div>
             </div>          
     </body>
 
     <script>
-       let theme = sessionStorage.getItem('dark');
+       
+            let dark = sessionStorage.getItem('dark');
+            if (dark === null){
+                dark = "false";
+            }
+            
+            function darken(){
+                document.getElementById('theme').src = "img/light.png";
+                let table = document.getElementsByClassName("table table-hover");
+                table[0].className = "table table-hover table-dark";
+                table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
+                document.getElementById('one').style.backgroundColor = '#272a2e';
+                let texts = document.getElementsByClassName("text");
+                let cards = document.getElementsByClassName("card");
+                let i = texts.length - 1;
+                let j = cards.length - 1;
+                    //console.log("i: "+ i + "j :"+ j);
+                while(j >= 0){
+                    cards[j].style.backgroundColor = '#18171B';
+                    j--;     
+                }  
+                while(i >= 0){
+                    texts[i].style.color = 'white';
+                    i--;     
+                }
+                dark = "true";
+                }
+
+            function lighten(){
+                document.getElementById('theme').src = "img/dark.png";
+                let table = document.getElementsByClassName("table table-hover table-dark");
+                table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
+                table[0].className = "table table-hover";
+                document.getElementById('one').style.backgroundColor = '#d1d1d1';
+                let texts = document.getElementsByClassName("text");
+                let cards = document.getElementsByClassName("card");
+                let i = texts.length - 1;
+                let j = cards.length - 1;
+                    //console.log("i: "+ i + "j :"+ j);
+                while(j >= 0){
+                    cards[j].style.backgroundColor = 'white';
+                    j--;     
+                }  
+                while(i >= 0){
+                    texts[i].style.color = 'black';
+                    i--;     
+                }
+                dark = "false";
+                }    
+
+
+            if(dark === "true"){
+                darken();
+            }
+            
+            
+            document.querySelectorAll('.stylebutton').forEach(function(e) {
+                e.addEventListener('click', function() {
+                //console.log(dark);
+
+
+
+                if(dark === "false"){
+                   darken();
+                }
+                else if(dark === "true"){
+                    lighten();     
+                }
+
+                else{
+                    console.log("this shouldnt happen");
+                }
+                
+                 
+                sessionStorage.setItem('dark', dark);
+
+                
+
+                })
+            });
+            
+            </script>
        
     </script>
 </html>
