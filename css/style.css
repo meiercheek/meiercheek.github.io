@@ -10,11 +10,24 @@ body{
     width:500px;
 }
 
+#special{
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+
+
+#three{
+    
+    margin:auto;
+    padding:20px;
+}
+
 
 
 .stylebutton{
     height: 60px;
-    background-color: inherit;
+    background-color:rgba(255, 0, 0, 0.0);
     border: 0px;
     position: absolute;
 }
@@ -39,6 +52,11 @@ body{
         position: absolute;
         z-index: 2;
         
+    }
+
+    #special{
+        
+        position: fixed;
     }
 
     .btn{
