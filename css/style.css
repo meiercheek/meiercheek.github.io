@@ -6,6 +6,7 @@ body{
     
 }
 
+
 .card{
     width:500px;
 }
@@ -23,6 +24,10 @@ body{
     padding:20px;
 }
 
+#warning{
+    display:none;
+}
+
 
 
 .stylebutton{
@@ -32,13 +37,13 @@ body{
     position: absolute;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) and (orientation: portrait) {
     body {
       padding: 0px;
       z-index: 0;
 
     }
-
+   
     .card{
         width:100%;
         z-index: 1;
@@ -54,14 +59,38 @@ body{
         
     }
 
-    #special{
-        
+    canvas{
+        display:none;
+    }
+
+    #warning{
+        display:block;
+        color:white;
+    }
+
+    
+    #wrapper{
+        background-color:rgba(0, 0, 0, 1);
     }
 
     .btn{
-        margin: 5px;
+        margin: 10px;
     }
   }
+
+  @media only screen and (orientation: landscape) {
+    canvas {
+        height: 100%;
+    }
+
+    .btn{
+        display:none;
+    }
+
+    warning{
+        display:none;
+    }
+}
 
 canvas{
 	font-family:"font";
