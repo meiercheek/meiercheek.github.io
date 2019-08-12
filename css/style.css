@@ -56,11 +56,10 @@ body{
 
     #special{
         
-        position: fixed;
     }
 
     .btn{
-        padding: 5px;
+        margin: 5px;
     }
   }
 
