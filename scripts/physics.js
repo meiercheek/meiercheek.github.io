@@ -1,4 +1,4 @@
-var Physics = {
+let Physics = {
     update: function (data) {
         Physics.tasks.Gravity(data.Objects.geralt);
 
@@ -24,9 +24,9 @@ var Physics = {
         },
 
         CollisionDetection: function (data) {
-            var geralt = data.Objects.geralt;
+            let geralt = data.Objects.geralt;
 
-            var CollisionDetection = function (object) {
+            let CollisionDetection = function (object) {
                 if (geralt.x < object.x + object.w &&
                     geralt.x + geralt.w > object.x &&
                     geralt.y < object.y + object.h &&
@@ -56,7 +56,7 @@ var Physics = {
         },
 
         CollisionDetection2: function (data, p) {
-            var CollisionDetection2 = function (object) {
+            let CollisionDetection2 = function (object) {
                 if (p.x < object.x + object.w && p.x + p.w > object.x && p.y < object.y + object.h && p.y + p.h > object.y)
                     Physics.tasks.Collision2(object, p);
             };
@@ -67,7 +67,7 @@ var Physics = {
         },
 
         Collision: function (data, object) {
-            var geralt = data.Objects.geralt;
+            let geralt = data.Objects.geralt;
 
             if (object.type === 'wall') {
                 if (geralt.y + geralt.h > object.y && geralt.x + geralt.w > object.x + 10 &&
@@ -92,12 +92,12 @@ var Physics = {
 				}
             } 
 			else if (object.type === 'spider') {
-                var p = object;
+                let p = object;
 
                 if (geralt.y + geralt.h >= p.y && geralt.x + geralt.w > p.x + 10 &&
                     geralt.x < p.x + p.h - 10 && geralt.velY >= 0) {
 					
-                    var numberSpider = data.Objects.arrayofSpiders.indexOf(p);
+                    let numberSpider = data.Objects.arrayofSpiders.indexOf(p);
                     data.Objects.arrayofSpiders.splice(numberSpider, 1);
                     geralt.defaultState = geralt.state.jumping;
                     geralt.velY = -20.5;
@@ -131,7 +131,7 @@ var Physics = {
             } 
 			else if (object.type === 'coin') {
                 geralt.coins++;
-                var numberCoin = data.Objects.arrayofCoins.indexOf(object);
+                let numberCoin = data.Objects.arrayofCoins.indexOf(object);
                 data.Objects.arrayofCoins.splice(numberCoin, 1);
                 if (geralt.win == false) {
                     if (!Begin.ini.muted) {
@@ -142,7 +142,7 @@ var Physics = {
 
             } else if (object.type === 'elixir') {
                 geralt.coins += 100;
-                var numberEl = data.Objects.arrayofElixirs.indexOf(object);
+                let numberEl = data.Objects.arrayofElixirs.indexOf(object);
                 data.Objects.arrayofElixirs.splice(numberEl, 1);
                 if (geralt.win == false) {
                     if (!Begin.ini.muted) {
@@ -152,7 +152,7 @@ var Physics = {
                 }
 
             } else if (object.type === 'sword') {
-                var numberSw = data.Objects.arrayofSwords.indexOf(object);
+                let numberSw = data.Objects.arrayofSwords.indexOf(object);
                 data.Objects.arrayofSwords.splice(numberSw, 1);
                 if (!Begin.ini.muted)
                     data.audio.sword.cloneNode(true).play();

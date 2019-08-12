@@ -1,4 +1,4 @@
-var Movement = {
+let Movement = {
     update: function (data) {
         Movement.tasks.Geralt(data);
         Movement.tasks.Spider(data);

@@ -2,8 +2,49 @@ body{
     padding : 0;
     margin : 0;
     background-color: #d1d1d1;
-    display: flex;
+    display:flex;
+    
 }
+
+.card{
+    width:500px;
+}
+
+
+
+.stylebutton{
+    height: 60px;
+    background-color: inherit;
+    border: 0px;
+    position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      padding: 0px;
+      z-index: 0;
+
+    }
+
+    .card{
+        width:100%;
+        z-index: 1;
+        display:flex;
+    }
+
+    .card:first-child{
+        margin-top:40px;
+    }
+    .stylebutton{
+        position: absolute;
+        z-index: 2;
+        
+    }
+
+    .btn{
+        padding: 5px;
+    }
+  }
 
 canvas{
 	font-family:"font";

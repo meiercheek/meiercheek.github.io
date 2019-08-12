@@ -1,4 +1,4 @@
-var Animations = {
+let Animations = {
     update: function (data) {
         Animations.tasks.Sky(data);
         Animations.tasks.Geralt(data);

@@ -1,4 +1,4 @@
-var Render = {
+let Render = {
     update: function (data) {
 
         if (data.Objects.geralt.win === true) {

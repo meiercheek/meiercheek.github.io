@@ -1,12 +1,12 @@
-var Engine = {
+let Engine = {
     ini: function() {
-        var skyCanvas = document.getElementById("sky");
-        var backCanvas = document.getElementById("back");
-        var frontCanvas = document.getElementById("front");
-        var stars = document.getElementById("stars");
+        let skyCanvas = document.getElementById("sky");
+        let backCanvas = document.getElementById("back");
+        let frontCanvas = document.getElementById("front");
+        let stars = document.getElementById("stars");
 
 
-        var canvas = {
+        let canvas = {
             skyCanvas: skyCanvas,
             backCanvas: backCanvas,
             frontCanvas: frontCanvas,
@@ -19,17 +19,17 @@ var Engine = {
         };
 
 
-        var graphics = new Image();
+        let graphics = new Image();
         graphics.src = "img/map.png"
 
         graphics.addEventListener('load', function() {
-            var graphics = this;
+            let graphics = this;
         });
 
 
 
 
-        var data = {
+        let data = {
             frame: 0,
             canvas: canvas,
             graphics: graphics,
@@ -63,7 +63,7 @@ var Engine = {
 
 
     start: function(data) {
-        var loop = function() {
+        let loop = function() {
             Engine.begin(data);
 
             if (!Begin.ini.paused) {

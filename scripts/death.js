@@ -1,11 +1,11 @@
-var Death = {
+let Death = {
     calling: function (data) {
         Death.tasks.lossOfLife(data);
     },
 
     tasks: {
         lossOfLife: function (data) {
-            var geralt = data.Objects.geralt;
+            let geralt = data.Objects.geralt;
 			
 
             if (geralt.lifes > 0) {
@@ -20,26 +20,26 @@ var Death = {
                 }, 4000);
             } 
 			else {
-                for (var i = 0; i < data.Objects.tableofWalls.length; i++) {
+                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                     data.Objects.tableofWalls[i].x -= data.Objects.map.x;
                 }
 
-                for (var i = 0; i < data.Objects.arrayofSpiders.length; i++) {
+                for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                     data.Objects.arrayofSpiders[i].x -= data.Objects.map.x;
                 }
 
-                for (var i = 0; i < data.Objects.arrayofCoins.length; i++) {
+                for (let i = 0; i < data.Objects.arrayofCoins.length; i++) {
                     data.Objects.arrayofCoins[i].x -= data.Objects.map.x;
                 }
 
-                for (var i = 0; i < data.Objects.arrayofElixirs.length; i++) {
+                for (let i = 0; i < data.Objects.arrayofElixirs.length; i++) {
                     data.Objects.arrayofElixirs[i].x -= data.Objects.map.x;
                 }
 
-                for (var i = 0; i < data.Objects.arrayofSwords.length; i++) {
+                for (let i = 0; i < data.Objects.arrayofSwords.length; i++) {
                     data.Objects.arrayofSwords[i].x -= data.Objects.map.x;
                 }
-                for (var i = 0; i < data.Objects.arrayofTorches.length; i++) {
+                for (let i = 0; i < data.Objects.arrayofTorches.length; i++) {
                     data.Objects.arrayofTorches[i].x -= data.Objects.map.x;
                 }
 

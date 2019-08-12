@@ -1,4 +1,4 @@
-var Begin = {
+let Begin = {
     ini: function(data) {
         document.onkeydown = function(event) {
             Begin.tasks.keyDown[event.keyCode] = true;
@@ -7,12 +7,12 @@ var Begin = {
         document.onkeyup = function(event) {
             Begin.tasks.keyDown[event.keyCode] = false;
         }
-        var paused = false;
-        var muted = true;
+        let paused = false;
+        let muted = true;
     },
 
     bUpdate: function(data) {
-        var geralt = data.Objects.geralt;
+        let geralt = data.Objects.geralt;
 
         if (Begin.tasks.keyPressed(39)) {
             geralt.direction = 'right';
@@ -30,22 +30,22 @@ var Begin = {
                     data.Objects.map.x -= geralt.velX;
                     data.Objects.moon.x -= geralt.velX / 5;
 					
-                    for (var i = 0; i < data.Objects.tableofWalls.length; i++) {
+                    for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                         data.Objects.tableofWalls[i].x -= geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofSpiders.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                         data.Objects.arrayofSpiders[i].x -= geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofCoins.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofCoins.length; i++) {
                         data.Objects.arrayofCoins[i].x -= geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofElixirs.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofElixirs.length; i++) {
                         data.Objects.arrayofElixirs[i].x -= geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofSwords.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofSwords.length; i++) {
                         data.Objects.arrayofSwords[i].x -= geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofTorches.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofTorches.length; i++) {
                         data.Objects.arrayofTorches[i].x -= geralt.velX;
                     }
                 }
@@ -68,22 +68,22 @@ var Begin = {
                     data.Objects.map.x += geralt.velX;
                     data.Objects.moon.x += geralt.velX / 5;
 					
-                    for (var i = 0; i < data.Objects.tableofWalls.length; i++) {
+                    for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                         data.Objects.tableofWalls[i].x += geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofSpiders.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                         data.Objects.arrayofSpiders[i].x += geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofCoins.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofCoins.length; i++) {
                         data.Objects.arrayofCoins[i].x += geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofElixirs.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofElixirs.length; i++) {
                         data.Objects.arrayofElixirs[i].x += geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofSwords.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofSwords.length; i++) {
                         data.Objects.arrayofSwords[i].x += geralt.velX;
                     }
-                    for (var i = 0; i < data.Objects.arrayofTorches.length; i++) {
+                    for (let i = 0; i < data.Objects.arrayofTorches.length; i++) {
                         data.Objects.arrayofTorches[i].x += geralt.velX;
                     }
                 }

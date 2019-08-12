@@ -1,6 +1,6 @@
-var Objects = {
+let Objects = {
     ini: function(data) {
-        var sky = {
+        let sky = {
             picture: new Objects.tasks.Picture(data.graphics, 0, 210, 960, 208),
             x: 0,
             y: 0,
@@ -8,7 +8,7 @@ var Objects = {
             h: 624
         };
 
-        var moon = {
+        let moon = {
             picture: new Objects.tasks.Picture(data.graphics, 0, 430, 4318, 208),
             x: 0,
             y: 0,
@@ -16,7 +16,7 @@ var Objects = {
             h: 624
         };
 
-        var map = {
+        let map = {
             picture: new Objects.tasks.Picture(data.graphics, 0, 0, 4320, 208),
             x: 0,
             y: 0,
@@ -24,9 +24,9 @@ var Objects = {
             h: 624
         };
 
-        var geralt = new Objects.tasks.Geralt(data.graphics, 0, 0, 90, 138);
+        let geralt = new Objects.tasks.Geralt(data.graphics, 0, 0, 90, 138);
 
-        var walls = [
+        let walls = [
             [0, 624, 1, 624],
             [0, 528, 1104, 96],
             [528, 336, 144, 48],
@@ -85,7 +85,7 @@ var Objects = {
 			
         ];
 
-        var spiders = [
+        let spiders = [
             [912, 480],
             [1440, 480],
             [2322, 54],
@@ -107,7 +107,7 @@ var Objects = {
 			
         ];
 
-        var coins = [
+        let coins = [
             [528, 240],
             [624, 240],
             [1920, 384],
@@ -134,7 +134,7 @@ var Objects = {
 			[12402, 174],
         ];
 
-        var elixirs = [
+        let elixirs = [
             [588, 100],
             [1185, 96],
             [4257, 267],
@@ -148,11 +148,11 @@ var Objects = {
 			
         ];
 
-        var swords = [
+        let swords = [
 			[12696, 72],
         ];
 
-        var torches = [
+        let torches = [
             [2370, 276],
             [4380, 468],
 			[9690, 357],
@@ -212,7 +212,7 @@ var Objects = {
         },
 
         Geralt: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 966, 222, 30, 46);
             this.animation = {
                 right: {
@@ -284,22 +284,22 @@ var Objects = {
                             } 
 							else {
                                 data.Objects.map.x -= inside.velX;
-                                for (var i = 0; i < data.Objects.tableofWalls.length; i++) {
+                                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                                     data.Objects.tableofWalls[i].x -= inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofSpiders.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                                     data.Objects.arrayofSpiders[i].x -= inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofCoins.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofCoins.length; i++) {
                                     data.Objects.arrayofCoins[i].x -= inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofElixirs.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofElixirs.length; i++) {
                                     data.Objects.arrayofElixirs[i].x -= inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofSwords.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofSwords.length; i++) {
                                     data.Objects.arrayofSwords[i].x -= inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofTorches.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofTorches.length; i++) {
                                     data.Objects.arrayofTorches[i].x -= inside.velX;
                                 }
                             }
@@ -312,22 +312,22 @@ var Objects = {
                             } 
 							else {
                                 data.Objects.map.x += inside.velX;
-                                for (var i = 0; i < data.Objects.tableofWalls.length; i++) {
+                                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                                     data.Objects.tableofWalls[i].x += inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofSpiders.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                                     data.Objects.arrayofSpiders[i].x += inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofCoins.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofCoins.length; i++) {
                                     data.Objects.arrayofCoins[i].x += inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofElixirs.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofElixirs.length; i++) {
                                     data.Objects.arrayofElixirs[i].x += inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofSwords.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofSwords.length; i++) {
                                     data.Objects.arrayofSwords[i].x += inside.velX;
                                 }
-                                for (var i = 0; i < data.Objects.arrayofTorches.length; i++) {
+                                for (let i = 0; i < data.Objects.arrayofTorches.length; i++) {
                                     data.Objects.arrayofTorches[i].x += inside.velX;
                                 }
                             }
@@ -387,7 +387,7 @@ var Objects = {
         },
 
         Spider: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 1285, 223, 28, 19);
             this.animation = {
                 movement: {
@@ -444,7 +444,7 @@ var Objects = {
         },
 
         Coin: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 1019, 280, 21, 20);
             this.animation = {
                 turn: {
@@ -477,7 +477,7 @@ var Objects = {
         },
 
         Elixir: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 1099, 280, 12, 18);
             this.animation = {
                 turn: {
@@ -511,7 +511,7 @@ var Objects = {
         },
 
         Sword: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 1138, 280, 10, 18);
             this.animation = {
                 turn: {
@@ -545,7 +545,7 @@ var Objects = {
         },
 
         Torch: function(img, x, y, w, h) {
-            var inside = this;
+            let inside = this;
             this.picture = new Objects.tasks.Picture(img, 1200, 280, 8, 20);
             this.animation = {
                 turn: {
