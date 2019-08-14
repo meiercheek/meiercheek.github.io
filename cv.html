@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>skills</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
                 <button type="button" onclick="location.href='index.html';" id="special" class="btn btn-outline-danger btn-lg">go back</button>
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="text" class="card-title" >my skills:</h1>      
+                        <h1 class="text" class="card-title" >my skills</h1>      
                         <table style="width: inherit; margin:auto; padding:20px;" class="table table-hover">
                                 <thead>
                                   <tr>
@@ -35,17 +35,51 @@
                                         <td>intermediate</td>
                                         </tr>
                                         <tr>
-                                        <td><img src="img/c.png"></img><img src="img/html.png"></img><img src="img/css.png"></img></td>
+                                        <td><img src="img/html.png"></img><img src="img/css.png"></img><img src="img/c.png"></img></td>
                                         <td>advanced</td>
                                         </tr>
                                         <tr>
-                                        <td><img src="img/cs.png"></img></td>
+                                        <td><img src="img/cs.png"></img><img src="img/sql.png"></img><img src="img/linux.png"></img></td>
                                         <td>beginner</td>
                                         </tr>
                                         </tbody>
                               </table>
                         
                     </div>
+                </div>
+                <div class="card">
+                     <div class="card-body">
+                            <h1 class="text" style="padding-bottom:10px;" class="card-title">languages i speak</h1>
+                            <table style="width: inherit; margin:auto; padding:20px;" class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>language</th>
+                                    <th>level</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><img class="flag" src="img/united-kingdom.png"></img></td>
+                                            <td>c1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="flag" src="img/germany.png"></img></td>
+                                            <td>b1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="flag" src="img/russia.png"></img></td>
+                                            <td>a2</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img class="flag" src="img/poland.png"></img></td>
+                                            <td>b2</td>
+                                        </tr>
+                                        
+                                </tbody>
+                                        
+                              </table>
+                              <p style="text-align: center"><i><code><small>icons made by twitter from www.flaticon.com</small></code></i></p>
+                     </div>  
                 </div>
             </div>          
     </body>
@@ -60,6 +94,8 @@
             function darken(){
                 document.getElementById('theme').src = "img/light.png";
                 let table = document.getElementsByClassName("table table-hover");
+                table[1].className = "table table-hover table-dark";
+                table[1].style = 'width: inherit; margin:auto; padding:20px; border: none';
                 table[0].className = "table table-hover table-dark";
                 table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
                 document.getElementById('one').style.backgroundColor = '#272a2e';
@@ -82,6 +118,8 @@
             function lighten(){
                 document.getElementById('theme').src = "img/dark.png";
                 let table = document.getElementsByClassName("table table-hover table-dark");
+                table[1].style = 'width: inherit; margin:auto; padding:20px; border: none';
+                table[1].className = "table table-hover";
                 table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
                 table[0].className = "table table-hover";
                 document.getElementById('one').style.backgroundColor = '#d1d1d1';
