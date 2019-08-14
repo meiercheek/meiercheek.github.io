@@ -32,6 +32,9 @@ body{
     height:40px;
 }
 
+#src{
+    position: absolute;
+}
 
 
 .stylebutton{
