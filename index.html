@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/fav.png" type="image/gif"> 
+        <script src="scripts/web/locale.js"></script>
     </head>
     <body id="one">
             
@@ -14,10 +16,10 @@
         <div style="margin:auto; padding-top:20px;">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="text" class="card-title" >ľubomír majerčík</h1>      
-                        <p class="text" class="card-text">computer science student, web developer and aspiring video game programmer</p>
-                        <button type="button" onclick="location.href='https://www.linkedin.com/in/lmajercik/';" class="btn btn-outline-primary btn-lg">add me on linkedin</button>
-                        <button type="button" onclick="location.href='cv.html';" class="btn btn-outline-dark btn-lg">look at my cv</button>
+                        <h1 class="text" class="card-title">ľubomír majerčík</h1>      
+                        <p class="text" id="info" class="card-text"></p>
+                        <button type="button" id="li" onclick="location.href='https://www.linkedin.com/in/lmajercik/';" class="btn btn-outline-primary btn-lg">add me on linkedin</button>
+                        <button type="button" id="cv"  onclick="location.href='cv.html';" class="btn btn-outline-dark btn-lg">look at my cv</button>
                     </div>
                 </div>
         
@@ -28,7 +30,7 @@
                         
                         <div class="card-body">
                             <h4 class="text" class="card-title">super geralt (demo)</h4>
-                            <p class="text" class="card-text">side scrolling platformer made in js inspired by super mario bros.</p>
+                            <p class="text" id="sgDesc" class="card-text">side scrolling platformer made in js inspired by super mario bros.</p>
                             <button type="button" onclick="location.href='supergeralt.html';" class="btn btn-outline-success btn-lg">try it out</button>
                         </div>
                 </div>
@@ -121,6 +123,8 @@
                 })
             });
             
+            
+
             </script>
         
 
