@@ -5,6 +5,19 @@ body{
     display:flex;
     
 }
+.skillTableLight{
+    width: inherit;
+    margin:auto;
+    padding:20px;
+    background-color: #ededed;
+}
+
+.skillTableDark{
+    width: inherit;
+    margin:auto;
+    padding:20px;
+}
+
 
 
 .card{

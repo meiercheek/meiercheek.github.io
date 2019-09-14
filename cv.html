@@ -13,16 +13,13 @@
     </head>
     <body id="one">
         <button type="submit" class="stylebutton"><img id="theme" src="img/dark.png"></img></button>
-        
-            
-        
-        
+
         <div id="three">
                 <button type="button" onclick="location.href='index.html';" id="special" class="btn btn-outline-danger btn-lg">go back</button>
                 <div class="card">
                     <div class="card-body">
                         <h1 class="text" class="card-title" >my skills</h1>      
-                        <table style="width: inherit; margin:auto; padding:20px;" class="table table-hover">
+                        <table class="table table-hover skillTableLight">
                                 <thead>
                                   <tr>
                                     <th>skill</th>
@@ -50,7 +47,7 @@
                 <div class="card">
                      <div class="card-body">
                             <h1 class="text" style="padding-bottom:10px;" class="card-title">languages i speak</h1>
-                            <table style="width: inherit; margin:auto; padding:20px;" class="table table-hover">
+                            <table class="table table-hover skillTableLight">
                                 <thead>
                                   <tr>
                                     <th>language</th>
@@ -93,11 +90,9 @@
             
             function darken(){
                 document.getElementById('theme').src = "img/light.png";
-                let table = document.getElementsByClassName("table table-hover");
-                table[1].className = "table table-hover table-dark";
-                table[1].style = 'width: inherit; margin:auto; padding:20px; border: none';
-                table[0].className = "table table-hover table-dark";
-                table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
+                let table = document.getElementsByClassName("table table-hover skillTableLight");
+                table[1].className = "table table-hover table-dark skillTableDark";
+                table[0].className = "table table-hover table-dark skillTableDark";
                 document.getElementById('one').style.backgroundColor = '#272a2e';
                 let texts = document.getElementsByClassName("text");
                 let cards = document.getElementsByClassName("card");
@@ -117,11 +112,9 @@
 
             function lighten(){
                 document.getElementById('theme').src = "img/dark.png";
-                let table = document.getElementsByClassName("table table-hover table-dark");
-                table[1].style = 'width: inherit; margin:auto; padding:20px; border: none';
-                table[1].className = "table table-hover";
-                table[0].style = 'width: inherit; margin:auto; padding:20px; border: none';
-                table[0].className = "table table-hover";
+                let table = document.getElementsByClassName("table table-hover table-dark skillTableDark");
+                table[1].className = "table table-hover skillTableLight";
+                table[0].className = "table table-hover skillTableLight";
                 document.getElementById('one').style.backgroundColor = '#d1d1d1';
                 let texts = document.getElementsByClassName("text");
                 let cards = document.getElementsByClassName("card");
