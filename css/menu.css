@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "font";
+    src: url('../font/font.otf');
+}
+
+body{
+    background-color: #000;
+}
+
+canvas{
+	font-family:"font";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top : 0;
+    bottom: 0;
+    left: 0;
+    right :0;
+    border: 2px solid white;
+    
+}

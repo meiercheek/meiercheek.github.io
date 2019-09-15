@@ -82,7 +82,8 @@ let Engine = {
 
 
 		data.audio.theme.loop = true;
-        Begin.ini.muted = true;
+        Begin.ini.muted = false;
+        data.audio.theme.play();
 
 
         Begin.ini(data);
@@ -102,13 +103,10 @@ let Engine = {
             }
             if (Begin.ini.paused){
 				Render.tasks.Write("PAUSED", data.canvas.frontCtx, 350, 300, "72px", "font");
-				if(data.frame > 600){
-                    Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
-                    Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
-                    Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
-                    Render.tasks.Write("esc - unpause", data.canvas.frontCtx, 20, 610, "16px", "font");
-                }
-				
+                Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
+                Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
+                Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
+                Render.tasks.Write("esc - unpause", data.canvas.frontCtx, 20, 610, "16px", "font");	
 			}
                 
 			
@@ -118,12 +116,12 @@ let Engine = {
 
             data.frame++;
 
-			if(data.frame < 600 && !Begin.ini.paused){
+			/*if(data.frame < 600 && !Begin.ini.paused){
 			    Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
 				Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
 				Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
 				Render.tasks.Write("esc - pause", data.canvas.frontCtx, 20, 610, "16px", "font");
-		        }
+		    }*/
 
             window.requestAnimationFrame(loop);
 
@@ -151,5 +149,5 @@ let Engine = {
 
 
 
-window.onload = Engine.ini();
+//window.onload = Engine.ini();
 

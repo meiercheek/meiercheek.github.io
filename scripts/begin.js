@@ -8,7 +8,7 @@ let Begin = {
             Begin.tasks.keyDown[event.keyCode] = false;
         }
         let paused = false;
-        let muted = true;
+        let muted = false;
     },
 
     bUpdate: (data) => {
