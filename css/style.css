@@ -29,7 +29,14 @@ body{
     margin-bottom: 20px;
 }
 
+i{
+    width: 2em;
+      
+}
 
+i {
+    font-size: 3rem
+}
 
 #three{
     
