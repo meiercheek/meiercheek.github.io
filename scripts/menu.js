@@ -8,7 +8,7 @@ let position = 'start';
 let controlsActive = false;
 let screen = 'main';
 let gamePlay = false;
-
+let mutedSounds = false;
 
 
 let draw = (select, x, y, w, h) => {
@@ -83,11 +83,21 @@ if(gamePlay === false){
         }*/
     
         if (key === 13){
-            if(gamePlay === false){
-            select.play();
-            selected();
+            if(gamePlay === false && mutedSounds === false){
+                select.play();
             }
+            selected();
+        }
 
+        if (key === 77){
+            if (gamePlay === false && mutedSounds == false) {
+                theme.pause();
+                mutedSounds = true;
+            } else if (gamePlay === false && mutedSounds === true) {
+                theme.loop = true;
+                theme.play();
+                mutedSounds = false;
+            }
         }
     });
 }
@@ -160,7 +170,9 @@ let startGame = () =>{
     
 
 }
-
+if(mutedSounds === true){
+    Render.tasks.Write("sound off", ctx, 420, 32, "24px", "font");
+}
 const theme= new Audio("audio/menutheme.ogg");
 const select= new Audio("audio/select.ogg");
 theme.play();
@@ -173,6 +185,7 @@ let loop = () => {
         swordsShine(position);
         swordsNormal(position);
     }
+    
     
 }
 let menuLoop = window.requestAnimationFrame(loop);

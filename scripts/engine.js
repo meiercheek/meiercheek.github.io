@@ -65,7 +65,6 @@ let Engine = {
             graphics: graphics,
             audio: {
                 theme: new Audio("audio/theme1.ogg"),
-                ambience: new Audio("audio/ambience.ogg"),
                 jump: new Audio("audio/jump.ogg"),
                 coin: new Audio("audio/coin.ogg"),
                 elixir: new Audio("audio/elixir.ogg"),
