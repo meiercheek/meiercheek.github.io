@@ -1,17 +1,17 @@
 let Begin = {
-    ini: function(data) {
-        document.onkeydown = function(event) {
+    ini: (data) => {
+        document.onkeydown = (event) => {
             Begin.tasks.keyDown[event.keyCode] = true;
         }
 
-        document.onkeyup = function(event) {
+        document.onkeyup = (event) => {
             Begin.tasks.keyDown[event.keyCode] = false;
         }
         let paused = false;
         let muted = true;
     },
 
-    bUpdate: function(data) {
+    bUpdate: (data) => {
         let geralt = data.Objects.geralt;
 
         if (Begin.tasks.keyPressed(39)) {
@@ -93,37 +93,11 @@ let Begin = {
             geralt.defaultState = geralt.state.jumping;
         }
 
-        if (Begin.tasks.keyPressed(27)) {
-            if (!Begin.ini.paused) {
-                data.audio.theme.pause();
-                Begin.ini.paused = true;
-            } else if (Begin.ini.paused) {
-                data.audio.theme.play();
-                Begin.ini.paused = false;
-            }
-
-
-        }
-
-        if (Begin.tasks.keyPressed(77)) {
-            if (!Begin.ini.muted) {
-                data.audio.theme.pause();
-                Begin.ini.muted = true;
-            } else if (Begin.ini.muted) {
-                data.audio.theme.loop = true;
-                data.audio.theme.play();
-                Begin.ini.muted = false;
-            }
-
-
-
-        }
-
     },
 
     tasks: {
         keyDown: {},
-        keyPressed: function(code) {
+        keyPressed:(code) => {
             return Begin.tasks.keyDown[code];
         }
     }

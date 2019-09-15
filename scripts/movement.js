@@ -1,15 +1,15 @@
 let Movement = {
-    update: function (data) {
+    update: (data) => {
         Movement.tasks.Geralt(data);
         Movement.tasks.Spider(data);
     },
 
     tasks: {
-        Geralt: function (data) {
+        Geralt: (data) => {
             data.Objects.geralt.defaultState.move(data);
         },
-        Spider: function (data) {
-            data.Objects.arrayofSpiders.forEach(function (p) {
+        Spider: (data) =>{
+            data.Objects.arrayofSpiders.forEach((p) => {
                 p.defaultState.moving(data);
             });
         }

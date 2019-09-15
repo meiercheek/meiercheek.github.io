@@ -1,5 +1,5 @@
 let Render = {
-    update: function (data) {
+    update:  (data) => {
 
         if (data.Objects.geralt.win === true) {
             data.canvas.frontCtx.fillStyle = "#000";
@@ -23,22 +23,22 @@ let Render = {
             Render.tasks.Write("Lives " + data.Objects.geralt.lifes, data.canvas.frontCtx, 16, 32, "24px", "font");
             Render.tasks.Write("score " + data.Objects.geralt.coins, data.canvas.frontCtx, 800, 32, "24px", "font");
 
-            data.Objects.arrayofCoins.forEach(function (c) {
+            data.Objects.arrayofCoins.forEach( (c) =>  {
                 Render.tasks.Draw(c, data.canvas.frontCtx);
             });
 
-            data.Objects.arrayofElixirs.forEach(function (e) {
+            data.Objects.arrayofElixirs.forEach( (e) =>  {
                 Render.tasks.Draw(e, data.canvas.frontCtx);
             });
 
-            data.Objects.arrayofSpiders.forEach(function (p) {
+            data.Objects.arrayofSpiders.forEach( (p) =>  {
                 Render.tasks.Draw(p, data.canvas.frontCtx);
             });
 
-            data.Objects.arrayofSwords.forEach(function (s) {
+            data.Objects.arrayofSwords.forEach( (s) => {
                 Render.tasks.Draw(s, data.canvas.frontCtx);
             });
-            data.Objects.arrayofTorches.forEach(function (t) {
+            data.Objects.arrayofTorches.forEach( (t) => {
                 Render.tasks.Draw(t, data.canvas.backCtx);
             });
 
@@ -58,13 +58,13 @@ let Render = {
     },
 
     tasks: {
-        Draw: function (what, where) {
+        Draw:  (what, where) => {
             where.drawImage(what.picture.img, what.picture.x,
                 what.picture.y, what.picture.w, what.picture.h,
                 what.x, what.y, what.w, what.h);
         },
 
-        Write: function (text, where, x, y, size, font) {
+        Write:  (text, where, x, y, size, font) => {
             where.font = size + " " + font;
             where.fillStyle = '#fff';
             where.fillText(text, x, y);

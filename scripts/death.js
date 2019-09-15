@@ -1,10 +1,10 @@
 let Death = {
-    calling: function (data) {
+    calling:  (data) => {
         Death.tasks.lossOfLife(data);
     },
 
     tasks: {
-        lossOfLife: function (data) {
+        lossOfLife: (data) => {
             let geralt = data.Objects.geralt;
 			
 
@@ -15,7 +15,7 @@ let Death = {
                 if (!Begin.ini.muted)
                     data.audio.death.play();
 				
-                setTimeout(function () {
+                setTimeout( () => {
                     location.reload();
                 }, 4000);
             } 

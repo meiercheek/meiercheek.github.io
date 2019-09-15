@@ -1,5 +1,5 @@
 let Physics = {
-    update: function (data) {
+    update:  (data) => {
         Physics.tasks.Gravity(data.Objects.geralt);
 
         if (!data.Objects.geralt.isDead)
@@ -8,7 +8,7 @@ let Physics = {
         Physics.tasks.Death(data);
 
 
-        data.Objects.arrayofSpiders.forEach(function (p) {
+        data.Objects.arrayofSpiders.forEach( (p) => {
             Physics.tasks.Gravity(p);
             Physics.tasks.CollisionDetection2(data, p);
         });
@@ -16,17 +16,17 @@ let Physics = {
     },
 
     tasks: {
-        Gravity: function (object) {
+        Gravity:  (object) => {
             if (!object.isDead)
                 object.defaultState = object.state.jumping;
             object.velY += 1;
             object.y += object.velY;
         },
 
-        CollisionDetection: function (data) {
+        CollisionDetection:  (data) => {
             let geralt = data.Objects.geralt;
 
-            let CollisionDetection = function (object) {
+            let CollisionDetection =  (object) => {
                 if (geralt.x < object.x + object.w &&
                     geralt.x + geralt.w > object.x &&
                     geralt.y < object.y + object.h &&
@@ -34,39 +34,39 @@ let Physics = {
                     Physics.tasks.Collision(data, object);
                 }
             };
-            data.Objects.tableofWalls.forEach(function (wall) {
+            data.Objects.tableofWalls.forEach( (wall) => {
                 CollisionDetection(wall);
             });
 
-            data.Objects.arrayofSpiders.forEach(function (spider) {
+            data.Objects.arrayofSpiders.forEach( (spider) => {
                 CollisionDetection(spider);
             });
 
-            data.Objects.arrayofCoins.forEach(function (coin) {
+            data.Objects.arrayofCoins.forEach( (coin) => {
                 CollisionDetection(coin);
             });
 
-            data.Objects.arrayofElixirs.forEach(function (elixir) {
+            data.Objects.arrayofElixirs.forEach( (elixir) => {
                 CollisionDetection(elixir);
             });
 
-            data.Objects.arrayofSwords.forEach(function (sword) {
+            data.Objects.arrayofSwords.forEach( (sword) => {
                 CollisionDetection(sword);
             });
         },
 
-        CollisionDetection2: function (data, p) {
-            let CollisionDetection2 = function (object) {
+        CollisionDetection2: (data, p) => {
+            let CollisionDetection2 =  (object) => {
                 if (p.x < object.x + object.w && p.x + p.w > object.x && p.y < object.y + object.h && p.y + p.h > object.y)
                     Physics.tasks.Collision2(object, p);
             };
 
-            data.Objects.tableofWalls.forEach(function (wall) {
+            data.Objects.tableofWalls.forEach( (wall) => {
                 CollisionDetection2(wall);
             });
         },
 
-        Collision: function (data, object) {
+        Collision: (data, object) => {
             let geralt = data.Objects.geralt;
 
             if (object.type === 'wall') {
@@ -113,7 +113,7 @@ let Physics = {
                     geralt.isDead = true;
                     if (!Begin.ini.muted)
                         data.audio.hurt.play();
-                    setTimeout(function () {
+                    setTimeout( () => {
                         Death.calling(data);
                     }, 750);
 					
@@ -123,7 +123,7 @@ let Physics = {
                     geralt.isDead = true;
                     if (!Begin.ini.muted)
                         data.audio.hurt.play();
-                    setTimeout(function () {
+                    setTimeout( () => {
                         Death.calling(data);
                     }, 750);
                 }
@@ -157,10 +157,10 @@ let Physics = {
                 if (!Begin.ini.muted)
                     data.audio.sword.cloneNode(true).play();
                 data.audio.theme.pause();
-                setTimeout(function () {
+                setTimeout( () => {
                     geralt.win = true;
                 }, 1500);
-                setTimeout(function () {
+                setTimeout( () => {
                     location.reload();
                 }, 10000);
 
@@ -168,7 +168,7 @@ let Physics = {
             }
         },
 
-        Collision2: function (object, p) {
+        Collision2: (object, p) => {
             if (object.type === 'wall') {
                 if (p.y + p.h > object.y && p.x + p.w > object.x + 10 && p.x < object.x + object.w - 10 && p.velY >= 0) {
                     p.defaultState = p.state.movement;
@@ -187,7 +187,7 @@ let Physics = {
             }
         },
 
-        Death: function (data) {
+        Death:  (data) => {
             if (data.Objects.geralt.y > 624) {
                 Death.calling(data);
             }

@@ -1,5 +1,5 @@
 let Engine = {
-    ini: function() {
+    ini:() => {
         let skyCanvas = document.getElementById("sky");
         let backCanvas = document.getElementById("back");
         let frontCanvas = document.getElementById("front");
@@ -18,11 +18,41 @@ let Engine = {
 
         };
 
+        window.addEventListener('keydown', (e) => {
+            var key = e.keyCode;
+            
+            if (key === 27){
+                //console.log("27 pressed");
+                if (Begin.ini.paused === false) {
+                    data.audio.theme.pause();
+                    Begin.ini.paused = true;
+                } else if (Begin.ini.paused == true && Begin.ini.muted ===false ) {
+                    data.audio.theme.play();
+                    Begin.ini.paused = false;
+                }
+                else{
+                    Begin.ini.paused = false;
+                }
+               
+            }
+            if (key === 77){
+                //console.log("77 pressed");
+                if (Begin.ini.muted == false) {
+                    data.audio.theme.pause();
+                    Begin.ini.muted = true;
+                } else if (Begin.ini.muted === true) {
+                    data.audio.theme.loop = true;
+                    data.audio.theme.play();
+                    Begin.ini.muted = false;
+                }
+            }
+        });
+
 
         let graphics = new Image();
         graphics.src = "img/map.png"
 
-        graphics.addEventListener('load', function() {
+        graphics.addEventListener('load', () => {
             let graphics = this;
         });
 
@@ -52,7 +82,7 @@ let Engine = {
 
 
 		data.audio.theme.loop = true;
-        //data.audio.theme.play();
+        Begin.ini.muted = true;
 
 
         Begin.ini(data);
@@ -62,8 +92,8 @@ let Engine = {
 
 
 
-    start: function(data) {
-        let loop = function() {
+    start: (data) => {
+        let loop = () => {
             Engine.begin(data);
 
             if (!Begin.ini.paused) {
@@ -72,12 +102,13 @@ let Engine = {
             }
             if (Begin.ini.paused){
 				Render.tasks.Write("PAUSED", data.canvas.frontCtx, 350, 300, "72px", "font");
+				if(data.frame > 600){
+                    Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
+                    Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
+                    Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
+                    Render.tasks.Write("esc - unpause", data.canvas.frontCtx, 20, 610, "16px", "font");
+                }
 				
-				Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
-				 Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
-				
-				 Render.tasks.Write("m - sound off", data.canvas.frontCtx, 20, 590, "16px", "font");
-				 Render.tasks.Write("esc - unpause", data.canvas.frontCtx, 20, 610, "16px", "font");
 			}
                 
 			
@@ -87,13 +118,12 @@ let Engine = {
 
             data.frame++;
 
-			if(data.frame < 600){
-			 Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
-				 Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
-				
-				 Render.tasks.Write("m - sound off", data.canvas.frontCtx, 20, 590, "16px", "font");
-				 Render.tasks.Write("esc - pause", data.canvas.frontCtx, 20, 610, "16px", "font");
-		}
+			if(data.frame < 600 && !Begin.ini.paused){
+			    Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
+				Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
+				Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
+				Render.tasks.Write("esc - pause", data.canvas.frontCtx, 20, 610, "16px", "font");
+		        }
 
             window.requestAnimationFrame(loop);
 
@@ -104,17 +134,17 @@ let Engine = {
 
     },
 
-    begin: function(data) {
+    begin:  (data) => {
         Begin.bUpdate(data);
     },
 
-    update: function(data) {
+    update: (data)  => {
         Movement.update(data);
         Animations.update(data);
         Physics.update(data);
     },
 
-    render: function(data) {
+    render: (data) => {
         Render.update(data);
     }
 };
@@ -122,3 +152,4 @@ let Engine = {
 
 
 window.onload = Engine.ini();
+
