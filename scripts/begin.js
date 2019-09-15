@@ -19,8 +19,11 @@ let Begin = {
 
             if (geralt.velY == 0) {
                 geralt.defaultState = geralt.state.moving;
-            } 
+            }
+            
 			else {
+                //data.Objects.moon.x -= geralt.velX / 10;
+
                 if (geralt.x < data.canvas.frontCanvas.width / 2 ||
                     data.Objects.map.x <= data.canvas.frontCanvas.width - data.Objects.map.w) {
                     geralt.x += geralt.velX;
@@ -28,7 +31,7 @@ let Begin = {
 				else {
 					
                     data.Objects.map.x -= geralt.velX;
-                    data.Objects.moon.x -= geralt.velX / 5;
+                    data.Objects.moon.x -= geralt.velX / 10;
 					
                     for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                         data.Objects.tableofWalls[i].x -= geralt.velX;
@@ -56,9 +59,12 @@ let Begin = {
 
             if (geralt.velY == 0) {
                 geralt.defaultState = geralt.state.moving;
-            } 
+            }
+            
+             
 			
 			else {
+                //data.Objects.moon.x += geralt.velX / 10;
                 if (geralt.x > data.canvas.frontCanvas.width / 2 ||
                     data.Objects.map.x >= 0) {
                     geralt.x -= geralt.velX;
@@ -66,7 +72,7 @@ let Begin = {
 				else {
 					
                     data.Objects.map.x += geralt.velX;
-                    data.Objects.moon.x += geralt.velX / 5;
+                    data.Objects.moon.x += geralt.velX / 10;
 					
                     for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
                         data.Objects.tableofWalls[i].x += geralt.velX;

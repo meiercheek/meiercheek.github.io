@@ -1,4 +1,4 @@
-function locale(){
+/*function locale(){
     let lg = "en"; 
     //document.getElementById('info').innerHTML = lang.lg.intro;
     alert(lang.lg.intro);
