@@ -149,7 +149,7 @@ let staticStuffControls = () => {
     ctx.rect(120, 80, 760, 464);
     ctx.stroke(); 
     Render.tasks.Write("controls", ctx, 350, 150, "48px", "font");
-    Render.tasks.Write("movement - ⇄", ctx, 340, 230, "36px", "font");
+    Render.tasks.Write("⇄ - move", ctx, 340, 230, "36px", "font");
 	Render.tasks.Write("space - jump", ctx, 340, 280, "36px", "font");
     Render.tasks.Write("m - sound toggle", ctx, 340, 330, "36px", "font");
     Render.tasks.Write("esc - pause", ctx, 340, 380, "36px", "font");
