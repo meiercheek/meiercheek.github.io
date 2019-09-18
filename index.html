@@ -11,7 +11,6 @@
         <script src="scripts/web/locale.js"></script>
     </head>
     <body id="one">
-            
         <button type="submit" class="stylebutton"><img id="theme" src="img/dark.png"></img> </button>
         <div style="margin:auto; padding-top:20px;">
                 <div class="card">
@@ -22,6 +21,8 @@
                         <button type="button" id="cv"  onclick="location.href='cv.html';" class="btn btn-outline-dark btn-lg">look at my cv</button>
                     </div>
                 </div>
+
+                <span id="preload">DOPICE</span>
         
             <h3 class="text" style="padding:10px">things i made:</h3>
             
@@ -38,6 +39,9 @@
         </div>
 
         <script>
+
+
+
             let dark = sessionStorage.getItem('dark');
             if (dark === null || dark === undefined){
                 dark = "false";

@@ -188,5 +188,12 @@ let loop = () => {
     
     
 }
-let menuLoop = window.requestAnimationFrame(loop);
 
+
+const font = new FontFaceObserver('font');
+  
+  font.load().then(function () {
+    let menuLoop = window.requestAnimationFrame(loop);
+  }, function () {
+    console.log('Font is not available');
+  });
