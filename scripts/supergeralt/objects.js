@@ -85,8 +85,8 @@ let Objects = {
 			
         ];
 
-        let spiders = [
-            [912, 480],
+        let spiders = [ //[912, 480],
+            
             [1440, 480],
             [2322, 54],
             [2880, 480],
@@ -168,7 +168,7 @@ let Objects = {
         data.Objects.sky = sky;
         data.Objects.map = map;
         data.Objects.geralt = geralt;
-        data.Objects.tableofWalls = [];
+        data.Objects.arrayofWalls = [];
         data.Objects.arrayofSpiders = [];
         data.Objects.arrayofCoins = [];
         data.Objects.arrayofElixirs = [];
@@ -177,7 +177,7 @@ let Objects = {
 
 
         walls.forEach(function(z) {
-            data.Objects.tableofWalls.push(new Objects.tasks.Wall(z[0], z[1], z[2], z[3]));
+            data.Objects.arrayofWalls.push(new Objects.tasks.Wall(z[0], z[1], z[2], z[3]));
         });
 
         spiders.forEach(function(p) {
@@ -284,8 +284,8 @@ let Objects = {
                             } 
 							else {
                                 data.Objects.map.x -= inside.velX;
-                                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
-                                    data.Objects.tableofWalls[i].x -= inside.velX;
+                                for (let i = 0; i < data.Objects.arrayofWalls.length; i++) {
+                                    data.Objects.arrayofWalls[i].x -= inside.velX;
                                 }
                                 for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                                     data.Objects.arrayofSpiders[i].x -= inside.velX;
@@ -312,8 +312,8 @@ let Objects = {
                             } 
 							else {
                                 data.Objects.map.x += inside.velX;
-                                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
-                                    data.Objects.tableofWalls[i].x += inside.velX;
+                                for (let i = 0; i < data.Objects.arrayofWalls.length; i++) {
+                                    data.Objects.arrayofWalls[i].x += inside.velX;
                                 }
                                 for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                                     data.Objects.arrayofSpiders[i].x += inside.velX;
@@ -379,7 +379,7 @@ let Objects = {
             this.w = w;
             this.h = h;
             this.velY = 1;
-            this.velX = 8;
+            this.velX = 7;
             this.lifes = 3;
             this.isDead = false;
             this.win = false;

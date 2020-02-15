@@ -33,8 +33,8 @@ let Begin = {
                     data.Objects.map.x -= geralt.velX;
                     data.Objects.moon.x -= geralt.velX / 10;
 					
-                    for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
-                        data.Objects.tableofWalls[i].x -= geralt.velX;
+                    for (let i = 0; i < data.Objects.arrayofWalls.length; i++) {
+                        data.Objects.arrayofWalls[i].x -= geralt.velX;
                     }
                     for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                         data.Objects.arrayofSpiders[i].x -= geralt.velX;
@@ -74,8 +74,8 @@ let Begin = {
                     data.Objects.map.x += geralt.velX;
                     data.Objects.moon.x += geralt.velX / 10;
 					
-                    for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
-                        data.Objects.tableofWalls[i].x += geralt.velX;
+                    for (let i = 0; i < data.Objects.arrayofWalls.length; i++) {
+                        data.Objects.arrayofWalls[i].x += geralt.velX;
                     }
                     for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
                         data.Objects.arrayofSpiders[i].x += geralt.velX;

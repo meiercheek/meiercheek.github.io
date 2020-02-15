@@ -20,8 +20,8 @@ let Death = {
                 }, 4000);
             } 
 			else {
-                for (let i = 0; i < data.Objects.tableofWalls.length; i++) {
-                    data.Objects.tableofWalls[i].x -= data.Objects.map.x;
+                for (let i = 0; i < data.Objects.arrayofWalls.length; i++) {
+                    data.Objects.arrayofWalls[i].x -= data.Objects.map.x;
                 }
 
                 for (let i = 0; i < data.Objects.arrayofSpiders.length; i++) {
@@ -46,7 +46,7 @@ let Death = {
                 data.Objects.moon.x = data.Objects.map.x = geralt.x = geralt.y = 0;
                 geralt.velY = 1;
                 geralt.defaultState = geralt.state.states;
-                geralt.velX = 8;
+                geralt.velX = 7;
                 geralt.isDead = false;
             }
         }

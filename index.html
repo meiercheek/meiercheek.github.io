@@ -31,9 +31,17 @@
                         <div class="card-body">
                             <h4 class="text" class="card-title">super geralt (WIP demo)</h4>
                             <p class="text" id="sgDesc" class="card-text">side scrolling platformer made in js inspired by super mario bros.</p>
-                            <button type="button" onclick="location.href='supergeralt.html';" class="btn btn-outline-success btn-lg">try it out</button>
+                            <button type="button" onclick="location.href='supergeralt.html';" class="btn btn-outline-success btn-lg">play</button>
                         </div>
                 </div>
+
+                <div class="card">                   
+                    <div class="card-body">
+                        <h4 class="text" class="card-title">prufers sequence converter</h4>
+                        <p class="text" id="sgDesc" class="card-text">small script to output vertices of a graph from Prufer's sequence</p>
+                        <button type="button" onclick="location.href='prufer.html';" class="btn btn-outline-success btn-lg y">try it out</button>
+                    </div>
+            </div>
             
         </div>
 
@@ -50,8 +58,11 @@
                 document.getElementById('theme').src = "img/light.png";
                 let cv = document.getElementsByClassName("btn btn-outline-dark btn-lg");
                 cv[0].className = "btn btn-outline-light btn-lg";
-                let sg = document.getElementsByClassName("btn btn-outline-success btn-lg");
+                let sg = document.getElementsByClassName("btn btn-outline-success btn-lg y");
+                let dg = document.getElementsByClassName("btn btn-outline-success btn-lg");
+                //dg[0].className = "btn btn-outline-light btn-lg";
                 sg[0].className = "btn btn-outline-light btn-lg";
+                //sg[1].className = "btn btn-outline-light btn-lg";
                 let ln = document.getElementsByClassName("btn btn-outline-primary btn-lg");
                 ln[0].className = "btn btn-outline-light btn-lg";
                 document.getElementById('one').style.backgroundColor = '#272a2e';
@@ -75,7 +86,8 @@
                 document.getElementById('theme').src = "img/dark.png";
                 let btns = document.getElementsByClassName("btn btn-outline-light btn-lg");
                     //console.log(btns);
-                btns[2].className = "btn btn-outline-success btn-lg";
+                //btns[3].className = "btn btn-outline-success btn-lg";
+                btns[2].className = "btn btn-outline-success btn-lg y";
                 btns[1].className = "btn btn-outline-dark btn-lg";
                 btns[0].className = "btn btn-outline-primary btn-lg";
                 document.getElementById('one').style.backgroundColor = '#d1d1d1';

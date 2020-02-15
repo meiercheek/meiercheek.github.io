@@ -34,7 +34,7 @@ let Physics = {
                     Physics.tasks.Collision(data, object);
                 }
             };
-            data.Objects.tableofWalls.forEach( (wall) => {
+            data.Objects.arrayofWalls.forEach( (wall) => {
                 CollisionDetection(wall);
             });
 
@@ -61,7 +61,7 @@ let Physics = {
                     Physics.tasks.Collision2(object, p);
             };
 
-            data.Objects.tableofWalls.forEach( (wall) => {
+            data.Objects.arrayofWalls.forEach( (wall) => {
                 CollisionDetection2(wall);
             });
         },

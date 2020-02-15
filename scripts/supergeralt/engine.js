@@ -114,14 +114,6 @@ let Engine = {
 
 
             data.frame++;
-
-			/*if(data.frame < 600 && !Begin.ini.paused){
-			    Render.tasks.Write("⇄ - move", data.canvas.frontCtx, 20, 550, "16px", "font");
-				Render.tasks.Write("space - jump", data.canvas.frontCtx, 20, 570, "16px", "font");
-				Render.tasks.Write("m - sound toggle", data.canvas.frontCtx, 20, 590, "16px", "font");
-				Render.tasks.Write("esc - pause", data.canvas.frontCtx, 20, 610, "16px", "font");
-		    }*/
-
             window.requestAnimationFrame(loop);
 
         };

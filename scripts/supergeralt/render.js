@@ -6,7 +6,7 @@ let Render = {
             data.canvas.frontCtx.fillRect(0, 0, data.canvas.frontCanvas.width, data.canvas.frontCanvas.height);
             Render.tasks.Write("You win", data.canvas.frontCtx, 350, 300, "72px", "font");
             Render.tasks.Write("To be continued", data.canvas.frontCtx, 410, 350, "20px", "font");
-			Render.tasks.Write("Made by Lubomir Majercik", data.canvas.frontCtx, 315, 600, "24px", "font");
+			
         } else {
 
             data.canvas.starCtx.fillStyle = "#131325";

@@ -113,6 +113,8 @@ let staticStuffMain = () =>{
     Render.tasks.Write("geralt", ctx, 300, 280, "80px", "font");
     Render.tasks.Write("start game", ctx, 370, 400, "48px", "font");
     Render.tasks.Write("controls", ctx, 370, 490, "48px", "font");
+    Render.tasks.Write("made by lubomir majercik", ctx, 390, 600, "12px", "font");
+    Render.tasks.Write("2019", ctx, 477, 615, "12px", "font");
     
 }
 

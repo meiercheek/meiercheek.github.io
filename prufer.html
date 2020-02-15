@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="scripts/prufer/index.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/fav.png" type="image/gif"> 
+    </head>
+    <body id="one" style="background-color: #d1d1d1;">
+        <button type="submit" class="stylebutton"><img id="theme" src="img/dark.png"></img> </button>
+        
+        <div style="padding:30px; margin:auto; padding-top:20px;" id="container">
+            <button type="button" onclick="location.href='index.html';" id="special" class="btn btn-outline-danger btn-lg">go back</button>
+            <p class="text">input prufer's sequence:</p>
+            
+            <input id="seq" value="3,1,4,2,8,2,5,3,3"></input>
+            <button type="button" class="btn btn-outline-primary btn-lg" onclick="start()">Submit</button>
+            <br>
+            <br>
+            <p class="text">output:</p>
+            <div id="output">
+                <span id="result"></span>
+            </div> 
+        </div>    
+
+    </body>
+
+    <script>
+        let dark = sessionStorage.getItem('dark');
+        if (dark === null || dark === undefined){
+            dark = "false";
+        }
+        
+        function darken(){
+            document.getElementById('theme').src = "img/light.png";
+            document.getElementById('one').style.backgroundColor = '#272a2e';
+            let m = document.getElementsByClassName('text');
+            m[0].style.color = 'white';
+            m[1].style.color = 'white';
+           
+            let arr = document.getElementsByClassName('res');
+            let arrlen = arr.length;
+            for(let i = 0; i < arrlen; i++){
+                arr[i].style.color = 'white';
+            }
+        
+            dark = "true";
+        }
+
+        function lighten(){
+            document.getElementById('theme').src = "img/dark.png";
+            document.getElementById('one').style.backgroundColor = '#d1d1d1';
+
+            
+            let m = document.getElementsByClassName('text');
+            m[0].style.color = 'black';
+            m[1].style.color = 'black';
+           
+
+            let arr = document.getElementsByClassName('res');
+            let arrlen = arr.length;
+            for(let i = 0; i < arrlen; i++){
+                arr[i].style.color = 'black';
+            }
+
+            dark = "false";
+        }    
+
+
+        if(dark === "true"){
+            darken();
+        }
+        
+        
+        document.querySelectorAll('.stylebutton').forEach(function(e) {
+            e.addEventListener('click', function() {
+            //console.log(dark);
+
+
+
+            if(dark === "false"){
+               darken();
+            }
+            else if(dark === "true"){
+                lighten();     
+            }
+
+            else{
+                alert(dark);
+            }
+            
+             
+            sessionStorage.setItem('dark', dark);
+
+            
+
+            })
+        });
+        
+        
+
+        </script>
+
+</html>
